@@ -1,0 +1,19 @@
+Q1).Runnable VS Callable Threads
+
+In Java, Runnable and Callable are both interfaces that can be used to create threads. However, there are some key differences between them:
+
+Runnable: The Runnable interface has a single method called "run()" that takes no arguments and returns void. This method contains the code 
+that will be executed by the thread. When a class implements the Runnable interface, it must provide an implementation of the "run()" method.
+
+Callable: The Callable interface also has a single method called "call()" that takes no arguments but returns a generic type (e.g. Integer, 
+String, etc.). Like the "run()" method, the "call()" method contains the code that will be executed by the thread. However, the "call()" 
+method can also return a value, which can be used for tasks that need to return a result.
+
+Execution: A Runnable object can be passed to a Thread object's constructor, and the thread will start executing the run() method when the 
+start() method is called on the Thread object. A Callable object can be passed to a ExecutorService object's submit() method, and the task
+will be executed asynchronously and the returned result can be accessed through the Future object.
+
+Exception Handling: The Runnable interface doesn't throw any checked exceptions, while the Callable interface throws Exception.
+
+In summary, Runnable is a simple interface for creating threads that do not return a value, while Callable allows for more complex threading 
+tasks that can return a value and handle exceptions.
