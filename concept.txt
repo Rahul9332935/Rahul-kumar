@@ -17,3 +17,21 @@ Exception Handling: The Runnable interface doesn't throw any checked exceptions,
 
 In summary, Runnable is a simple interface for creating threads that do not return a value, while Callable allows for more complex threading 
 tasks that can return a value and handle exceptions.
+
+Q2).Different between final, finally, and finalize in java ?
+
+  In Java, "final" is a keyword that can be used in several different ways:
+
+  When applied to a variable, "final" means that the variable's value cannot be changed after it is initialized.
+
+  When applied to a method, "final" means that the method cannot be overridden by a subclass.
+
+  When applied to a class, "final" means that the class cannot be subclassed.
+
+ "finally" is used in the context of exception handling, and is used to specify a block of code that will be executed regardless of           whether an exception is thrown or caught.
+
+  "finalize" is a method that can be overridden in a class, and is called by the garbage collector before an object is garbage collected.     It is typically used to perform cleanup actions on an object before it is removed from memory.
+
+
+
+Regenerate response
