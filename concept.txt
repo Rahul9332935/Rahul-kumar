@@ -31,6 +31,77 @@ Q2).Different between final, finally, and finalize in java ?
  "finally" is used in the context of exception handling, and is used to specify a block of code that will be executed regardless of           whether an exception is thrown or caught.
 
   "finalize" is a method that can be overridden in a class, and is called by the garbage collector before an object is garbage collected.     It is typically used to perform cleanup actions on an object before it is removed from memory.
+  
+  
+Q3).What is a linked list data structure explain
+  A linked list is a linear data structure where each element, called a node, contains a reference to an object and a reference to the next node in the list. The last    node in the list has a reference to null, indicating the end of the list.
+
+  The nodes in a linked list can be thought of as forming a chain, with each node pointing to the next node in the sequence. Linked lists are often used when it is       necessary to insert or remove elements from the middle of a list, as this can be done more efficiently with a linked list than with an array-based data structure.
+
+  There are two main types of linked lists: singly linked lists, where each node contains a reference to the next node in the list, and doubly linked lists, where each   node contains a reference to both the next and previous nodes in the list.
+
+  Advantages of linked lists include dynamic memory allocation, which allows for efficient use of memory, and the ability to easily insert and remove elements at any     point in the list. However, linked lists also have some disadvantages, including slower random access time compared to arrays and the need for additional memory to     store the references between nodes.
+
+
+
+Example
+Here's an example of a simple singly linked list implementation in Java:
+
+java
+Copy code
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    Node head;
+
+    public void append(int data) {
+        if (head == null) {
+            head = new Node(data);
+            return;
+        }
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = new Node(data);
+    }
+
+    public void prepend(int data) {
+        Node newHead = new Node(data);
+        newHead.next = head;
+        head = newHead;
+    }
+
+    public void deleteWithValue(int data) {
+        if (head == null) return;
+        if (head.data == data) {
+            head = head.next;
+            return;
+        }
+        Node current = head;
+        while (current.next != null) {
+            if (current.next.data == data) {
+                current.next = current.next.next;
+                return;
+            }
+            current = current.next;
+        }
+    }
+}
+This example defines a Node class, which represents a single node in the list, and a LinkedList class, which represents the linked list itself. The LinkedList class has methods for appending a new node to the end of the list, prepending a new node to the beginning of the list, and deleting a node with a specific value.
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
 
 
 
